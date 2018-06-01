@@ -2,3 +2,16 @@
 node_modules
 build
 cache
+
+#PhpStorm
+/.idea/*
+!/.idea/*.iml
+!/.idea/codeStyleSettings.xml
+!/.idea/modules.xml
+!/.idea/php.xml
+!/.idea/webResources.xml
+!/.idea/inspectionProfiles/
+!/.idea/runConfigurations/
+!/.idea/dictionaries/
+.idea/dictionaries/*
+!/.idea/dictionaries/dictionary.xml
