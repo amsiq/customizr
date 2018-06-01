@@ -22,7 +22,8 @@
 				"!lib/**/*"
 			]
 		},
-		"customTests" : []
+		"customTests" : [],
+		"showOutput" : false
 	},
 	"private": {
 		"url" : {

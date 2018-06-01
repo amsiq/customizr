@@ -44,7 +44,7 @@ module.exports = function (modernizrPath) {
 		return result;
 	};
 
-	return {
+	var utils = {
 		_ : require("underscore"),
 
 		file : {
@@ -111,6 +111,10 @@ module.exports = function (modernizrPath) {
 
 		log : {
 			ok : function (string) {
+				if (! utils.getSettings().showOutput) {
+					return;
+				}
+				
 				if (string) {
 					return process.stdout.write(">> ".green + string + "\n");
 				}
@@ -119,11 +123,19 @@ module.exports = function (modernizrPath) {
 			},
 
 			subhead : function (string) {
+				if (! utils.getSettings().showOutput) {
+					return;
+				}
+				
 				string = string || "";
 				return process.stdout.write("\n" + string.bold + "\n");
 			},
 
 			write : function (string) {
+				if (! utils.getSettings().showOutput) {
+					return;
+				}
+				
 				string = string || "";
 				return process.stdout.write(string);
 			},
@@ -134,6 +146,10 @@ module.exports = function (modernizrPath) {
 			},
 
 			writeln : function (string) {
+				if (! utils.getSettings().showOutput) {
+					return;
+				}
+				
 				string = string || "";
 				return process.stdout.write(string + "\n");
 			}
@@ -224,4 +240,6 @@ module.exports = function (modernizrPath) {
 			return this.defaults;
 		}
 	};
+	
+	return utils;
 };
